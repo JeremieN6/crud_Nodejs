@@ -1,0 +1,58 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>Id Produit</td>
+            <td>Libellé</td>
+            <td>Prix Unitaire</td>
+            <td>Quantité</td>
+            <td>Somme</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data) { %>
+            <% for(var i = 0; i < data.length; i++) { %>
+              <tr>
+                <td><%= data[i].id_produit %></td>
+                <td><%= data[i].libelle %></td>
+                <td><%= data[i].prix_unitaire %> €</td>
+                <td><%= data[i].quantite %></td>
+                <td><%= data[i].quantite * data[i].prix_unitaire %> €</td>
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+<!--    
+    
+    <div class="col-md-5">
+      <div class="card-body">
+        <form action="/add/" method="POST">
+          <div class="form-group">
+            <input type="text" name="id_produit" placeholder="Id Produit" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="id_commande" placeholder="Id Commande" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="quantite" placeholder="Quantité" class="form-control">
+          </div>
+          <div class="form-group">
+                <input type="text" name="prix_unitaire" placeholder="Prix" class="form-control">
+           </div>
+
+          <button type="submit" class="btn btn-primary">
+            Enregistrer
+          </button>
+        </form>
+      </div>
+    </div> -->
+  </div>
+</div>
+
+<% include partials/_footer %>
